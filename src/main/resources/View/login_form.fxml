@@ -1,14 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.LoginFormController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.LoginFormController" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f4f4f4;">
 
+    <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <padding>
+            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0"/>
+        </padding>
+
+        <Label text="Thoga Kade - Professional Login" textFill="#333333">
+            <font>
+                <Font name="System Bold" size="24.0"/>
+            </font>
+        </Label>
+
+        <GridPane hgap="10" vgap="10" maxWidth="350"
+                  style="-fx-padding: 20; -fx-background-color: white; -fx-border-radius: 5; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 5);">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0"/>
+            </columnConstraints>
+
+            <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Label>
+            <TextField fx:id="txtUsername" promptText="Enter your username" GridPane.columnIndex="1"
+                       GridPane.rowIndex="0"/>
+
+            <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <font>
+                    <Font size="14.0"/>
+                </font>
+            </Label>
+            <PasswordField fx:id="txtPassword" promptText="Enter your password" GridPane.columnIndex="1"
+                           GridPane.rowIndex="1"/>
+
+        </GridPane>
+
+        <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#loginButtonOnAction" text="Log In" prefWidth="150.0"
+                style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16;">
+            <VBox.margin>
+                <Insets top="10.0"/>
+            </VBox.margin>
+        </Button>
+
+        <Label fx:id="lblMessage" textFill="RED"/>
+
+    </VBox>
 </AnchorPane>
