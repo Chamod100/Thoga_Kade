@@ -57,12 +57,12 @@ public class CustomerFormController implements Initializable {
         colCustID.setCellValueFactory(new PropertyValueFactory<>("CustID"));
         colCustTitel.setCellValueFactory(new PropertyValueFactory<>("CustTitel"));
         colCustName.setCellValueFactory(new PropertyValueFactory<>("CustName"));
-        colCustAddress.setCellValueFactory(new PropertyValueFactory<>("CustAddress"));
+        colDOB.setCellValueFactory(new PropertyValueFactory<>("DOB"));
+        colSalary.setCellValueFactory(new PropertyValueFactory<>("Salary"));
+        colCustAddress.setCellValueFactory(new PropertyValueFactory<>("Cust"));
         colCity.setCellValueFactory(new PropertyValueFactory<>("City"));
         colProvince.setCellValueFactory(new PropertyValueFactory<>("Province"));
         colPostalCode.setCellValueFactory(new PropertyValueFactory<>("PostalCode"));
-        colDOB.setCellValueFactory(new PropertyValueFactory<>("DOB"));
-        colSalary.setCellValueFactory(new PropertyValueFactory<>("Salary"));
 
         loadAllCustomers();
 
@@ -87,9 +87,7 @@ public class CustomerFormController implements Initializable {
         String DOB = txtDOB.getText();
         double Salary = Double.parseDouble(txtSalary.getText());
 
-        customerService.addCustomerDetails(
-                CustID, CustTitle, CustName, CustAddress, City, Province, PostalCode, DOB, Salary
-        );
+        customerService.addCustomerDetails(CustID, CustTitle, CustName, CustAddress, City, Province, PostalCode, DOB, Salary);
 
         clearFields();
         loadAllCustomers();
@@ -120,9 +118,7 @@ public class CustomerFormController implements Initializable {
         String DOB = txtDOB.getText();
         double Salary = Double.parseDouble(txtSalary.getText());
 
-        customerService.updateCustomerDetails(
-                CustID, CustTitle, CustName, CustAddress, City, Province, PostalCode, DOB, Salary
-        );
+        customerService.updateCustomerDetails(CustID, CustTitle, CustName, CustAddress, City, Province, PostalCode, DOB, Salary);
 
         clearFields();
         loadAllCustomers();

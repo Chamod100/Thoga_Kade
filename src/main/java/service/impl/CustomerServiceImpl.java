@@ -45,12 +45,12 @@ public class CustomerServiceImpl implements CustomerService {
                         allCustomers.getString("CustID"),
                         allCustomers.getString("CustTitle"),
                         allCustomers.getString("CustName"),
+                        allCustomers.getString("DOB"),
+                        allCustomers.getDouble("Salary"),
                         allCustomers.getString("CustAddress"),
                         allCustomers.getString("City"),
                         allCustomers.getString("Province"),
-                        allCustomers.getString("PostalCode"),
-                        allCustomers.getString("DOB"),
-                        allCustomers.getString("Salary")
+                        allCustomers.getString("PostalCode")
                 ));
             }
 

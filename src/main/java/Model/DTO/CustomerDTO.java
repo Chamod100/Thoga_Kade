@@ -13,7 +13,7 @@ public class CustomerDTO {
     private String CustTitel;
     private String CustName;
     private String DOB;
-    private String Salary;
+    private double Salary;
     private String CustAddress;
     private String City;
     private String Province;

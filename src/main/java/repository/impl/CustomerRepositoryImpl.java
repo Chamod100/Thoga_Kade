@@ -53,9 +53,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
 
-            PreparedStatement pstm = connection.prepareStatement(
-                    "DELETE FROM customer WHERE CustID = ?"
-            );
+            PreparedStatement pstm = connection.prepareStatement("DELETE FROM customer WHERE CustID = ?");
 
             pstm.setObject(1, id);
             pstm.executeUpdate();
@@ -66,8 +64,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     }
 
     @Override
-    public void updateCustomer(String id, String title, String name, String address, String city,
-                               String province, String postalCode, String dob, double salary) {
+    public void updateCustomer(String id, String title, String name, String address, String city, String province, String postalCode, String dob, double salary) {
 
         try {
             Connection connection = DBConnection.getInstance().getConnection();
