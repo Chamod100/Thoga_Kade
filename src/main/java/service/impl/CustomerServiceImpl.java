@@ -52,6 +52,7 @@ public class CustomerServiceImpl implements CustomerService {
                         allCustomers.getString("Province"),
                         allCustomers.getString("PostalCode")
                 ));
+
             }
 
         } catch (SQLException e) {

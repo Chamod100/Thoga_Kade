@@ -3,13 +3,15 @@ package controller.customerController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import Model.DTO.CustomerDTO;
-import service.CustomerService;
 import service.impl.CustomerServiceImpl;
+import service.CustomerService;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,50 +21,88 @@ public class CustomerFormController implements Initializable {
     CustomerService customerService = new CustomerServiceImpl();
 
     @FXML
+    private Button Add;
+
+    @FXML
+    private Button Clear;
+
+    @FXML
+    private Button Delete;
+
+    @FXML
+    private Button Update;
+
+    @FXML
+    private TableColumn<?, ?> colAddress;
+
+    @FXML
+    private TableColumn<?, ?> colCity;
+
+    @FXML
+    private TableColumn<?, ?> colCustID;
+
+    @FXML
+    private TableColumn<?, ?> colCustName;
+
+    @FXML
+    private TableColumn<?, ?> colCustTitel;
+
+    @FXML
+    private TableColumn<?, ?> colDOB;
+
+    @FXML
+    private TableColumn<?, ?> colPostalCode;
+
+    @FXML
+    private TableColumn<?, ?> colProvince;
+
+    @FXML
+    private TableColumn<?, ?> colSalary;
+
+    @FXML
+    private AnchorPane tabelCust;
+
+    @FXML
     private TableView<CustomerDTO> tblCustomerView;
 
     @FXML
-    private TableColumn<CustomerDTO, String> colCustID;
+    private TextField txtAddress;
 
     @FXML
-    private TableColumn<CustomerDTO, String> colCustTitel;
+    private TextField txtCity;
 
     @FXML
-    private TableColumn<CustomerDTO, String> colCustName;
+    private TextField txtCustID;
 
     @FXML
-    private TableColumn<CustomerDTO, String> colCustAddress;
+    private TextField txtDOB;
 
     @FXML
-    private TableColumn<CustomerDTO, String> colCity;
+    private TextField txtName;
 
     @FXML
-    private TableColumn<CustomerDTO, String> colProvince;
+    private TextField txtPostalCode;
 
     @FXML
-    private TableColumn<CustomerDTO, String> colPostalCode;
+    private TextField txtProvince;
 
     @FXML
-    private TableColumn<CustomerDTO, String> colDOB;
+    private TextField txtSalary;
 
     @FXML
-    private TableColumn<CustomerDTO, Double> colSalary;
-
-    @FXML
-    private TextField txtCustID, txtTitel, txtName, txtAddress, txtCity, txtProvince, txtPostalCode, txtDOB, txtSalary;
+    private TextField txtTitel;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         colCustID.setCellValueFactory(new PropertyValueFactory<>("CustID"));
-        colCustTitel.setCellValueFactory(new PropertyValueFactory<>("CustTitel"));
+        colCustTitel.setCellValueFactory(new PropertyValueFactory<>("CustTitle"));
         colCustName.setCellValueFactory(new PropertyValueFactory<>("CustName"));
         colDOB.setCellValueFactory(new PropertyValueFactory<>("DOB"));
-        colSalary.setCellValueFactory(new PropertyValueFactory<>("Salary"));
-        colCustAddress.setCellValueFactory(new PropertyValueFactory<>("Cust"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("CustAddress"));
         colCity.setCellValueFactory(new PropertyValueFactory<>("City"));
         colProvince.setCellValueFactory(new PropertyValueFactory<>("Province"));
         colPostalCode.setCellValueFactory(new PropertyValueFactory<>("PostalCode"));
+        colSalary.setCellValueFactory(new PropertyValueFactory<>("Salary"));
 
         loadAllCustomers();
 
@@ -130,7 +170,7 @@ public class CustomerFormController implements Initializable {
 
     private void setSelectedValue(CustomerDTO c) {
         txtCustID.setText(c.getCustID());
-        txtTitel.setText(c.getCustTitel());
+        txtTitel.setText(c.getCustTitle());
         txtName.setText(c.getCustName());
         txtAddress.setText(c.getCustAddress());
         txtCity.setText(c.getCity());

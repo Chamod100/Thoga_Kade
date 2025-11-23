@@ -20,12 +20,12 @@
                 <TableColumn fx:id="colCustID" prefWidth="79.20000839233398" text="CustID" />
                 <TableColumn fx:id="colCustTitel" prefWidth="112.79995727539062" text="CustTitle" />
                 <TableColumn fx:id="colCustName" prefWidth="116.79994201660156" text="CustName" />
+                <TableColumn fx:id="colAddress" prefWidth="159.2000732421875" text="CustAddress" />
                 <TableColumn fx:id="colDOB" prefWidth="124.79998779296875" text="DOB" />
                 <TableColumn fx:id="colSalary" prefWidth="132.79998779296875" text="Salary" />
-                <TableColumn fx:id="colAddress" prefWidth="159.2000732421875" text="CustAddress" />
                 <TableColumn fx:id="colCity" prefWidth="114.39996337890625" text="City" />
                 <TableColumn fx:id="colProvince" prefWidth="159.20001220703125" text="Province" />
-                <TableColumn fx:id="colPosalCide" prefWidth="133.60003662109375" text="PostalCode" />
+                <TableColumn fx:id="colPostalCode" prefWidth="133.60003662109375" text="PostalCode" />
             </columns>
         </TableView>
         <TextField fx:id="txtCustID" layoutX="173.0" layoutY="101.0" prefHeight="25.0" prefWidth="168.0" promptText="CustID" />

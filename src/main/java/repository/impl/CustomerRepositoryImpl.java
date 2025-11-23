@@ -20,8 +20,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     }
 
     @Override
-    public void addCustomer(String id, String title, String name, String address, String city,
-                            String province, String postalCode, String dob, double salary) {
+    public void addCustomer(String id, String title, String name, String address, String city, String province, String postalCode, String dob, double salary) {
 
         try {
             Connection connection = DBConnection.getInstance().getConnection();
@@ -33,12 +32,12 @@ public class CustomerRepositoryImpl implements CustomerRepository {
             preparedStatement.setObject(1, id);
             preparedStatement.setObject(2, title);
             preparedStatement.setObject(3, name);
-            preparedStatement.setObject(4, address);
-            preparedStatement.setObject(5, city);
-            preparedStatement.setObject(6, province);
-            preparedStatement.setObject(7, postalCode);
-            preparedStatement.setObject(8, dob);
-            preparedStatement.setObject(9, salary);
+            preparedStatement.setObject(4, dob);
+            preparedStatement.setObject(5, salary);
+            preparedStatement.setObject(6, address);
+            preparedStatement.setObject(7, city);
+            preparedStatement.setObject(8, province);
+            preparedStatement.setObject(9, postalCode);
 
             preparedStatement.executeUpdate();
 

@@ -10,7 +10,7 @@ import lombok.*;
 public class CustomerDTO {
 
     private String CustID;
-    private String CustTitel;
+    private String CustTitle;  // FIXED: correct spelling
     private String CustName;
     private String DOB;
     private double Salary;
